@@ -5,9 +5,9 @@ INNER JOIN users as ugo on ugo.id = eg.gestor_operacao
 WHERE data_fim IS NULL GROUP BY gestor_area, gestor_operacao;
 
 /*Select diretor_operacao (superiorId) */
-select  diretor_operacao,
-		us.username,
-        diretor_operacao
+select  diretor_operacao as id,
+		us.username as name,
+        diretor_operacao as superiorId
 from estruturas_gestao 
 inner join users as us on us.id = diretor_operacao 
 where data_fim is null group by diretor_operacao;
